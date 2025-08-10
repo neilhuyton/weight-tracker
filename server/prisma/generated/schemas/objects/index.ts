@@ -1,0 +1,57 @@
+/**
+ * Object Schemas Index
+ * Auto-generated - do not edit manually
+ */
+
+export * from './DateTimeFieldUpdateOperationsInput.schema';
+export * from './DateTimeFilter.schema';
+export * from './DateTimeWithAggregatesFilter.schema';
+export * from './DecimalNullableFilter.schema';
+export * from './DecimalNullableWithAggregatesFilter.schema';
+export * from './EnumWeightUnitFieldUpdateOperationsInput.schema';
+export * from './EnumWeightUnitFilter.schema';
+export * from './EnumWeightUnitWithAggregatesFilter.schema';
+export * from './IntFieldUpdateOperationsInput.schema';
+export * from './IntFilter.schema';
+export * from './IntNullableFilter.schema';
+export * from './IntNullableWithAggregatesFilter.schema';
+export * from './IntWithAggregatesFilter.schema';
+export * from './NestedDateTimeFilter.schema';
+export * from './NestedDateTimeWithAggregatesFilter.schema';
+export * from './NestedDecimalNullableFilter.schema';
+export * from './NestedDecimalNullableWithAggregatesFilter.schema';
+export * from './NestedEnumWeightUnitFilter.schema';
+export * from './NestedEnumWeightUnitWithAggregatesFilter.schema';
+export * from './NestedFloatFilter.schema';
+export * from './NestedFloatNullableFilter.schema';
+export * from './NestedIntFilter.schema';
+export * from './NestedIntNullableFilter.schema';
+export * from './NestedIntNullableWithAggregatesFilter.schema';
+export * from './NestedIntWithAggregatesFilter.schema';
+export * from './NullableDecimalFieldUpdateOperationsInput.schema';
+export * from './NullableIntFieldUpdateOperationsInput.schema';
+export * from './SortOrderInput.schema';
+export * from './WeightEntryArgs.schema';
+export * from './WeightEntryAvgAggregateInput.schema';
+export * from './WeightEntryAvgOrderByAggregateInput.schema';
+export * from './WeightEntryCountAggregateInput.schema';
+export * from './WeightEntryCountOrderByAggregateInput.schema';
+export * from './WeightEntryCreateInput.schema';
+export * from './WeightEntryCreateManyInput.schema';
+export * from './WeightEntryMaxAggregateInput.schema';
+export * from './WeightEntryMaxOrderByAggregateInput.schema';
+export * from './WeightEntryMinAggregateInput.schema';
+export * from './WeightEntryMinOrderByAggregateInput.schema';
+export * from './WeightEntryOrderByWithAggregationInput.schema';
+export * from './WeightEntryOrderByWithRelationInput.schema';
+export * from './WeightEntryScalarWhereWithAggregatesInput.schema';
+export * from './WeightEntrySelect.schema';
+export * from './WeightEntrySumAggregateInput.schema';
+export * from './WeightEntrySumOrderByAggregateInput.schema';
+export * from './WeightEntryUncheckedCreateInput.schema';
+export * from './WeightEntryUncheckedUpdateInput.schema';
+export * from './WeightEntryUncheckedUpdateManyInput.schema';
+export * from './WeightEntryUpdateInput.schema';
+export * from './WeightEntryUpdateManyMutationInput.schema';
+export * from './WeightEntryWhereInput.schema';
+export * from './WeightEntryWhereUniqueInput.schema';

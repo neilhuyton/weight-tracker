@@ -1,0 +1,26 @@
+openapi: 3.0.0
+info:
+  title: User API
+  version: 1.0.0
+paths:
+  /weights:
+    get:
+      summary: Get a list of weights
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Weight'
+components:
+  schemas:
+    Weight:
+      type: object
+      properties:
+        id:
+          type: string
+        date:
+          type: string

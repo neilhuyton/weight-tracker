@@ -1,0 +1,8 @@
+{
+  "name": "weight-tracker",
+  "workspaces": [
+    "server",
+    "client",
+    "weight-tracker-schema"
+  ]
+}

@@ -1,0 +1,13 @@
+export { WeightEntryFindUniqueResultSchema } from './WeightEntryFindUniqueResult.schema';
+export { WeightEntryFindFirstResultSchema } from './WeightEntryFindFirstResult.schema';
+export { WeightEntryFindManyResultSchema } from './WeightEntryFindManyResult.schema';
+export { WeightEntryCreateResultSchema } from './WeightEntryCreateResult.schema';
+export { WeightEntryCreateManyResultSchema } from './WeightEntryCreateManyResult.schema';
+export { WeightEntryUpdateResultSchema } from './WeightEntryUpdateResult.schema';
+export { WeightEntryUpdateManyResultSchema } from './WeightEntryUpdateManyResult.schema';
+export { WeightEntryUpsertResultSchema } from './WeightEntryUpsertResult.schema';
+export { WeightEntryDeleteResultSchema } from './WeightEntryDeleteResult.schema';
+export { WeightEntryDeleteManyResultSchema } from './WeightEntryDeleteManyResult.schema';
+export { WeightEntryAggregateResultSchema } from './WeightEntryAggregateResult.schema';
+export { WeightEntryGroupByResultSchema } from './WeightEntryGroupByResult.schema';
+export { WeightEntryCountResultSchema } from './WeightEntryCountResult.schema';

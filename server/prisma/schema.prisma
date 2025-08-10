@@ -1,0 +1,49 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+// datasource db {
+//   provider = "sqlite"
+//   url      = "file:./dev.db"
+// }
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator zod {
+  provider       = "zod-prisma-types"
+}
+
+generator trpc {
+  provider          = "prisma-trpc-generator"
+  withZod           = true
+  withMiddleware    = false
+  withShield        = false
+  contextPath       = "../src/context"
+  trpcOptionsPath   = "../src/trpcOptions"
+}
+
+enum WeightUnit {
+  kg
+  stones
+  pounds
+}
+
+model WeightEntry {
+  id          Int        @id @default(autoincrement())
+  date        DateTime   @default(now())
+  weightKg    Decimal?   // Weight in kilograms (metric), optional
+  stones      Int?       // Weight in stones (UK), optional
+  pounds      Decimal?   // Pounds for UK (sub-measurement of stones) or US (primary unit), optional
+  ounces      Decimal?   // Ounces as sub-measurement for pounds (UK or US), optional
+  unit        WeightUnit @default(kg) // Indicates the primary unit used (kg, stones, or pounds)
+}
