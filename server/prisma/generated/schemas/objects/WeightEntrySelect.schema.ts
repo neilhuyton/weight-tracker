@@ -2,8 +2,7 @@ import { z } from 'zod';
 import type { Prisma } from '@prisma/client';
 
 
-// prettier-ignore
-const Schema = z.object({
+export const WeightEntrySelectObjectSchema: z.ZodType<Prisma.WeightEntrySelect, Prisma.WeightEntrySelect> = z.object({
   id: z.boolean().optional(),
   date: z.boolean().optional(),
   weightKg: z.boolean().optional(),
@@ -12,7 +11,12 @@ const Schema = z.object({
   ounces: z.boolean().optional(),
   unit: z.boolean().optional()
 }).strict();
-
- type __PrismaAlias = Prisma.JsonValue | Prisma.InputJsonValue;
-
- export const WeightEntrySelectObjectSchema = Schema
+export const WeightEntrySelectObjectZodSchema = z.object({
+  id: z.boolean().optional(),
+  date: z.boolean().optional(),
+  weightKg: z.boolean().optional(),
+  stones: z.boolean().optional(),
+  pounds: z.boolean().optional(),
+  ounces: z.boolean().optional(),
+  unit: z.boolean().optional()
+}).strict();

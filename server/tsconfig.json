@@ -34,6 +34,8 @@
     // Path resolution
     "baseUrl": ".",
     "paths": {
+      "shared": ["../shared/src/index.ts"],
+      "shared/*": ["../shared/src/*"],
       "@/*": ["src/*"]
     },
 
@@ -46,6 +48,6 @@
     "esm": true,
     "experimentalSpecifierResolution": "node"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "node_modules/@prisma/client/**/*"],
   "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }

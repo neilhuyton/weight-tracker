@@ -4,8 +4,7 @@ import { NestedIntWithAggregatesFilterObjectSchema } from './NestedIntWithAggreg
 import { NestedIntFilterObjectSchema } from './NestedIntFilter.schema';
 import { NestedFloatFilterObjectSchema } from './NestedFloatFilter.schema'
 
-// prettier-ignore
-const Schema = z.object({
+export const IntWithAggregatesFilterObjectSchema: z.ZodType<Prisma.IntWithAggregatesFilter, Prisma.IntWithAggregatesFilter> = z.object({
   equals: z.number().int().optional(),
   in: z.number().int().array().optional(),
   notIn: z.number().int().array().optional(),
@@ -20,7 +19,18 @@ const Schema = z.object({
   _min: z.lazy(() => NestedIntFilterObjectSchema).optional(),
   _max: z.lazy(() => NestedIntFilterObjectSchema).optional()
 }).strict();
-
- type __PrismaAlias = Prisma.JsonValue | Prisma.InputJsonValue;
-
- export const IntWithAggregatesFilterObjectSchema = Schema
+export const IntWithAggregatesFilterObjectZodSchema = z.object({
+  equals: z.number().int().optional(),
+  in: z.number().int().array().optional(),
+  notIn: z.number().int().array().optional(),
+  lt: z.number().int().optional(),
+  lte: z.number().int().optional(),
+  gt: z.number().int().optional(),
+  gte: z.number().int().optional(),
+  not: z.union([z.number().int(), z.lazy(() => NestedIntWithAggregatesFilterObjectSchema)]).optional(),
+  _count: z.lazy(() => NestedIntFilterObjectSchema).optional(),
+  _avg: z.lazy(() => NestedFloatFilterObjectSchema).optional(),
+  _sum: z.lazy(() => NestedIntFilterObjectSchema).optional(),
+  _min: z.lazy(() => NestedIntFilterObjectSchema).optional(),
+  _max: z.lazy(() => NestedIntFilterObjectSchema).optional()
+}).strict();

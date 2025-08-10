@@ -1,5 +1,3 @@
-import openApi from './openapi.json' with { type: 'json' };
+// shared/src/index.ts
 
-export * from './schemas.js';
-
-export { openApi };
+export * from './schemas';

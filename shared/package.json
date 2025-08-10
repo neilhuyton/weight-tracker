@@ -1,16 +1,18 @@
 {
-  "name": "weight-tracker-schema",
+  "name": "shared",
   "version": "1.0.0",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "convert:openapi": "yaml2json openapi.yaml -i4 -p > openapi.json"
   },
   "devDependencies": {
     "openapi-typescript": "^7.8.0",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "yamljs": "^0.3.0"
   },
   "dependencies": {
     "zod": "^4.0.16"

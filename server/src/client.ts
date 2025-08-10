@@ -1,4 +1,4 @@
-// src/tasks.ts
+// server/src/client.ts
 import { PrismaClient } from '../generated/prisma'; // Extensionless import
 import { z } from 'zod';
 
@@ -8,9 +8,6 @@ const prisma = new PrismaClient();
 // Define the schema for WeightEntry
 const WeightEntrySchema = z.object({
   id: z.number(),
-  title: z.string(),
-  description: z.string().nullable(),
-  completed: z.boolean(),
   date: z.date(),
   weightKg: z.number().nullable(),
   stones: z.number().nullable(),
@@ -22,7 +19,8 @@ const WeightEntrySchema = z.object({
 // Schema for a list of WeightEntry records
 const WeightEntryListSchema = z.array(WeightEntrySchema);
 
-async function getAllWeights({ completed }: { completed: boolean }) {
+async function getAllWeights() {
+  console.log('getAllWeights');
   try {
     const weightEntries = await prisma.weightEntry.findMany();
 

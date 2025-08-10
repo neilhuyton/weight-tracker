@@ -15,10 +15,14 @@
   },
   "dependencies": {
     "@trpc/client": "^11.4.4",
+    "change-case": "^5.4.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "server": "workspace:*",
-    "weight-tracker-schema": "workspace:*"
+    "shared": "workspace:*",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",

@@ -2,15 +2,17 @@ import { z } from 'zod';
 import type { Prisma } from '@prisma/client';
 import { SortOrderSchema } from '../enums/SortOrder.schema'
 
-// prettier-ignore
-const Schema = z.object({
+export const WeightEntrySumOrderByAggregateInputObjectSchema: z.ZodType<Prisma.WeightEntrySumOrderByAggregateInput, Prisma.WeightEntrySumOrderByAggregateInput> = z.object({
   id: SortOrderSchema.optional(),
   weightKg: SortOrderSchema.optional(),
   stones: SortOrderSchema.optional(),
   pounds: SortOrderSchema.optional(),
   ounces: SortOrderSchema.optional()
 }).strict();
-
- type __PrismaAlias = Prisma.JsonValue | Prisma.InputJsonValue;
-
- export const WeightEntrySumOrderByAggregateInputObjectSchema = Schema
+export const WeightEntrySumOrderByAggregateInputObjectZodSchema = z.object({
+  id: SortOrderSchema.optional(),
+  weightKg: SortOrderSchema.optional(),
+  stones: SortOrderSchema.optional(),
+  pounds: SortOrderSchema.optional(),
+  ounces: SortOrderSchema.optional()
+}).strict();

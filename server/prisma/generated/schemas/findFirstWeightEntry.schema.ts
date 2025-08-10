@@ -8,7 +8,7 @@ import { WeightEntryScalarFieldEnumSchema } from './enums/WeightEntryScalarField
 // Select schema needs to be in file to prevent circular imports
 //------------------------------------------------------
 
-export const WeightEntrySelectSchema: z.ZodType<Prisma.WeightEntrySelect> = z.object({
+export const WeightEntryFindFirstSelectSchema: z.ZodType<Prisma.WeightEntrySelect, Prisma.WeightEntrySelect> = z.object({
     id: z.boolean().optional(),
     date: z.boolean().optional(),
     weightKg: z.boolean().optional(),
@@ -18,7 +18,7 @@ export const WeightEntrySelectSchema: z.ZodType<Prisma.WeightEntrySelect> = z.ob
     unit: z.boolean().optional()
   }).strict();
 
-export const WeightEntrySelectZodSchema = z.object({
+export const WeightEntryFindFirstSelectZodSchema = z.object({
     id: z.boolean().optional(),
     date: z.boolean().optional(),
     weightKg: z.boolean().optional(),
@@ -28,6 +28,6 @@ export const WeightEntrySelectZodSchema = z.object({
     unit: z.boolean().optional()
   }).strict();
 
-export const WeightEntryFindFirstSchema: z.ZodType<Prisma.WeightEntryFindFirstArgs> = z.object({ select: WeightEntrySelectSchema.optional(),  orderBy: z.union([WeightEntryOrderByWithRelationInputObjectSchema, WeightEntryOrderByWithRelationInputObjectSchema.array()]).optional(), where: WeightEntryWhereInputObjectSchema.optional(), cursor: WeightEntryWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), distinct: z.union([WeightEntryScalarFieldEnumSchema, WeightEntryScalarFieldEnumSchema.array()]).optional() }).strict();
+export const WeightEntryFindFirstSchema: z.ZodType<Prisma.WeightEntryFindFirstArgs, Prisma.WeightEntryFindFirstArgs> = z.object({ select: WeightEntryFindFirstSelectSchema.optional(),  orderBy: z.union([WeightEntryOrderByWithRelationInputObjectSchema, WeightEntryOrderByWithRelationInputObjectSchema.array()]).optional(), where: WeightEntryWhereInputObjectSchema.optional(), cursor: WeightEntryWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), distinct: z.union([WeightEntryScalarFieldEnumSchema, WeightEntryScalarFieldEnumSchema.array()]).optional() }).strict();
 
-export const WeightEntryFindFirstZodSchema = z.object({ select: WeightEntrySelectSchema.optional(),  orderBy: z.union([WeightEntryOrderByWithRelationInputObjectSchema, WeightEntryOrderByWithRelationInputObjectSchema.array()]).optional(), where: WeightEntryWhereInputObjectSchema.optional(), cursor: WeightEntryWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), distinct: z.union([WeightEntryScalarFieldEnumSchema, WeightEntryScalarFieldEnumSchema.array()]).optional() }).strict();
+export const WeightEntryFindFirstZodSchema = z.object({ select: WeightEntryFindFirstSelectSchema.optional(),  orderBy: z.union([WeightEntryOrderByWithRelationInputObjectSchema, WeightEntryOrderByWithRelationInputObjectSchema.array()]).optional(), where: WeightEntryWhereInputObjectSchema.optional(), cursor: WeightEntryWhereUniqueInputObjectSchema.optional(), take: z.number().optional(), skip: z.number().optional(), distinct: z.union([WeightEntryScalarFieldEnumSchema, WeightEntryScalarFieldEnumSchema.array()]).optional() }).strict();

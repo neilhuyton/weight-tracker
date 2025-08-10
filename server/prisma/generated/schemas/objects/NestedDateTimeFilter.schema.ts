@@ -2,18 +2,23 @@ import { z } from 'zod';
 import type { Prisma } from '@prisma/client';
 
 
-// prettier-ignore
-const Schema = z.object({
-  equals: z.coerce.date().optional(),
-  in: z.coerce.date().array().optional(),
-  notIn: z.coerce.date().array().optional(),
-  lt: z.coerce.date().optional(),
-  lte: z.coerce.date().optional(),
-  gt: z.coerce.date().optional(),
-  gte: z.coerce.date().optional(),
-  not: z.union([z.coerce.date(), z.lazy(() => NestedDateTimeFilterObjectSchema)]).optional()
+export const NestedDateTimeFilterObjectSchema: z.ZodType<Prisma.NestedDateTimeFilter, Prisma.NestedDateTimeFilter> = z.object({
+  equals: z.union([z.date(), z.iso.datetime()]).optional(),
+  in: z.union([z.date().array(), z.iso.datetime().array()]).optional(),
+  notIn: z.union([z.date().array(), z.iso.datetime().array()]).optional(),
+  lt: z.union([z.date(), z.iso.datetime()]).optional(),
+  lte: z.union([z.date(), z.iso.datetime()]).optional(),
+  gt: z.union([z.date(), z.iso.datetime()]).optional(),
+  gte: z.union([z.date(), z.iso.datetime()]).optional(),
+  not: z.union([z.union([z.date(), z.iso.datetime()]), z.lazy(() => NestedDateTimeFilterObjectSchema)]).optional()
 }).strict();
-
- type __PrismaAlias = Prisma.JsonValue | Prisma.InputJsonValue;
-
- export const NestedDateTimeFilterObjectSchema = Schema
+export const NestedDateTimeFilterObjectZodSchema = z.object({
+  equals: z.union([z.date(), z.iso.datetime()]).optional(),
+  in: z.union([z.date().array(), z.iso.datetime().array()]).optional(),
+  notIn: z.union([z.date().array(), z.iso.datetime().array()]).optional(),
+  lt: z.union([z.date(), z.iso.datetime()]).optional(),
+  lte: z.union([z.date(), z.iso.datetime()]).optional(),
+  gt: z.union([z.date(), z.iso.datetime()]).optional(),
+  gte: z.union([z.date(), z.iso.datetime()]).optional(),
+  not: z.union([z.union([z.date(), z.iso.datetime()]), z.lazy(() => NestedDateTimeFilterObjectSchema)]).optional()
+}).strict();

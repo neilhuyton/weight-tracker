@@ -8,8 +8,7 @@ import { WeightEntryMaxOrderByAggregateInputObjectSchema } from './WeightEntryMa
 import { WeightEntryMinOrderByAggregateInputObjectSchema } from './WeightEntryMinOrderByAggregateInput.schema';
 import { WeightEntrySumOrderByAggregateInputObjectSchema } from './WeightEntrySumOrderByAggregateInput.schema'
 
-// prettier-ignore
-const Schema = z.object({
+export const WeightEntryOrderByWithAggregationInputObjectSchema: z.ZodType<Prisma.WeightEntryOrderByWithAggregationInput, Prisma.WeightEntryOrderByWithAggregationInput> = z.object({
   id: SortOrderSchema.optional(),
   date: SortOrderSchema.optional(),
   weightKg: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
@@ -23,7 +22,17 @@ const Schema = z.object({
   _min: z.lazy(() => WeightEntryMinOrderByAggregateInputObjectSchema).optional(),
   _sum: z.lazy(() => WeightEntrySumOrderByAggregateInputObjectSchema).optional()
 }).strict();
-
- type __PrismaAlias = Prisma.JsonValue | Prisma.InputJsonValue;
-
- export const WeightEntryOrderByWithAggregationInputObjectSchema = Schema
+export const WeightEntryOrderByWithAggregationInputObjectZodSchema = z.object({
+  id: SortOrderSchema.optional(),
+  date: SortOrderSchema.optional(),
+  weightKg: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
+  stones: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
+  pounds: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
+  ounces: z.union([SortOrderSchema, z.lazy(() => SortOrderInputObjectSchema)]).optional(),
+  unit: SortOrderSchema.optional(),
+  _count: z.lazy(() => WeightEntryCountOrderByAggregateInputObjectSchema).optional(),
+  _avg: z.lazy(() => WeightEntryAvgOrderByAggregateInputObjectSchema).optional(),
+  _max: z.lazy(() => WeightEntryMaxOrderByAggregateInputObjectSchema).optional(),
+  _min: z.lazy(() => WeightEntryMinOrderByAggregateInputObjectSchema).optional(),
+  _sum: z.lazy(() => WeightEntrySumOrderByAggregateInputObjectSchema).optional()
+}).strict();

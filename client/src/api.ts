@@ -1,9 +1,9 @@
-const API_URL = 'http://localhost:4001';
-
-import type { CreateWeight, Weight, UpdateWeight } from 'weight-tracker-schema';
-
-import type { weightRouter } from '@server/src/trpc/trpc';
+// client/src/api.ts
+import type {  Weight } from 'shared';
+import type { weightRouter } from 'server/src/trpc/trpc';
 import { createTRPCProxyClient, httpBatchLink } from '@trpc/client';
+
+const API_URL = 'http://localhost:4001';
 
 const client = createTRPCProxyClient<typeof weightRouter>({
   links: [
@@ -13,18 +13,18 @@ const client = createTRPCProxyClient<typeof weightRouter>({
   ],
 });
 
-export const fetchWeights = async (showCompleted: boolean): Promise<Weight[]> => {
-  return client.getWeights.query({ completed: showCompleted });
+export const fetchWeights = async (): Promise<Weight[]> => {
+  console.log('fetchWeights');
+  return client.getWeights.query({});
 };
+// export const createWeight = async (weight: CreateWeight): Promise<void> => {
+//   return client.createWeight.mutate(weight);
+// };
 
-export const createWeight = async (weight: CreateWeight): Promise<void> => {
-  return client.createWeight.mutate(weight);
-};
+// export const updateWeight = async (id: string, weight: UpdateWeight): Promise<void> => {
+//   return client.updateWeight.mutate({ id: Number(id), weight });
+// };
 
-export const updateWeight = async (id: string, weight: UpdateWeight): Promise<void> => {
-  return client.updateWeight.mutate({ id: Number(id), weight });
-};
-
-export const deleteWeight = async (id: string): Promise<void> => {
-  return client.deleteWeight.mutate(Number(id));
-};
+// export const deleteWeight = async (id: string): Promise<void> => {
+//   return client.deleteWeight.mutate(Number(id));
+// };

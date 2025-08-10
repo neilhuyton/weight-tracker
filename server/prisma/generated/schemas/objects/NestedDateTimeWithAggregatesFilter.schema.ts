@@ -3,21 +3,29 @@ import type { Prisma } from '@prisma/client';
 import { NestedIntFilterObjectSchema } from './NestedIntFilter.schema';
 import { NestedDateTimeFilterObjectSchema } from './NestedDateTimeFilter.schema'
 
-// prettier-ignore
-const Schema = z.object({
-  equals: z.coerce.date().optional(),
-  in: z.coerce.date().array().optional(),
-  notIn: z.coerce.date().array().optional(),
-  lt: z.coerce.date().optional(),
-  lte: z.coerce.date().optional(),
-  gt: z.coerce.date().optional(),
-  gte: z.coerce.date().optional(),
-  not: z.union([z.coerce.date(), z.lazy(() => NestedDateTimeWithAggregatesFilterObjectSchema)]).optional(),
+export const NestedDateTimeWithAggregatesFilterObjectSchema: z.ZodType<Prisma.NestedDateTimeWithAggregatesFilter, Prisma.NestedDateTimeWithAggregatesFilter> = z.object({
+  equals: z.union([z.date(), z.iso.datetime()]).optional(),
+  in: z.union([z.date().array(), z.iso.datetime().array()]).optional(),
+  notIn: z.union([z.date().array(), z.iso.datetime().array()]).optional(),
+  lt: z.union([z.date(), z.iso.datetime()]).optional(),
+  lte: z.union([z.date(), z.iso.datetime()]).optional(),
+  gt: z.union([z.date(), z.iso.datetime()]).optional(),
+  gte: z.union([z.date(), z.iso.datetime()]).optional(),
+  not: z.union([z.union([z.date(), z.iso.datetime()]), z.lazy(() => NestedDateTimeWithAggregatesFilterObjectSchema)]).optional(),
   _count: z.lazy(() => NestedIntFilterObjectSchema).optional(),
   _min: z.lazy(() => NestedDateTimeFilterObjectSchema).optional(),
   _max: z.lazy(() => NestedDateTimeFilterObjectSchema).optional()
 }).strict();
-
- type __PrismaAlias = Prisma.JsonValue | Prisma.InputJsonValue;
-
- export const NestedDateTimeWithAggregatesFilterObjectSchema = Schema
+export const NestedDateTimeWithAggregatesFilterObjectZodSchema = z.object({
+  equals: z.union([z.date(), z.iso.datetime()]).optional(),
+  in: z.union([z.date().array(), z.iso.datetime().array()]).optional(),
+  notIn: z.union([z.date().array(), z.iso.datetime().array()]).optional(),
+  lt: z.union([z.date(), z.iso.datetime()]).optional(),
+  lte: z.union([z.date(), z.iso.datetime()]).optional(),
+  gt: z.union([z.date(), z.iso.datetime()]).optional(),
+  gte: z.union([z.date(), z.iso.datetime()]).optional(),
+  not: z.union([z.union([z.date(), z.iso.datetime()]), z.lazy(() => NestedDateTimeWithAggregatesFilterObjectSchema)]).optional(),
+  _count: z.lazy(() => NestedIntFilterObjectSchema).optional(),
+  _min: z.lazy(() => NestedDateTimeFilterObjectSchema).optional(),
+  _max: z.lazy(() => NestedDateTimeFilterObjectSchema).optional()
+}).strict();

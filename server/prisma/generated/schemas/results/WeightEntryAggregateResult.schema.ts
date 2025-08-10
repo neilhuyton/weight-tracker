@@ -25,16 +25,16 @@ export const WeightEntryAggregateResultSchema = z.object({  _count: z.object({
   _min: z.object({
     id: z.number().int().nullable(),
     date: z.date().nullable(),
-    weightKg: z.number().nullable(),
+    weightKg: z.number().int().nullable(),
     stones: z.number().int().nullable(),
-    pounds: z.number().nullable(),
-    ounces: z.number().nullable()
+    pounds: z.number().int().nullable(),
+    ounces: z.number().int().nullable()
   }).nullable().optional(),
   _max: z.object({
     id: z.number().int().nullable(),
     date: z.date().nullable(),
-    weightKg: z.number().nullable(),
+    weightKg: z.number().int().nullable(),
     stones: z.number().int().nullable(),
-    pounds: z.number().nullable(),
-    ounces: z.number().nullable()
+    pounds: z.number().int().nullable(),
+    ounces: z.number().int().nullable()
   }).nullable().optional()});

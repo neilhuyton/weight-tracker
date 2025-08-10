@@ -2,11 +2,9 @@ import { z } from 'zod';
 import type { Prisma } from '@prisma/client';
 
 
-// prettier-ignore
-const Schema = z.object({
-  set: z.coerce.date().optional()
+export const DateTimeFieldUpdateOperationsInputObjectSchema: z.ZodType<Prisma.DateTimeFieldUpdateOperationsInput, Prisma.DateTimeFieldUpdateOperationsInput> = z.object({
+  set: z.union([z.date(), z.iso.datetime()]).optional()
 }).strict();
-
- type __PrismaAlias = Prisma.JsonValue | Prisma.InputJsonValue;
-
- export const DateTimeFieldUpdateOperationsInputObjectSchema = Schema
+export const DateTimeFieldUpdateOperationsInputObjectZodSchema = z.object({
+  set: z.union([z.date(), z.iso.datetime()]).optional()
+}).strict();
